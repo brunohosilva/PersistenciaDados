@@ -12,6 +12,11 @@ class SaudacaoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_saudacao)
 
+        // Instancia a clase DatabaseManager
+        // Faz a leitura dos dados do banco local
+        // Regata os dados e insere nas variaveis nome e tratamento
+        // Se tem dados no banco, mostra na dela do usuário o nome + tratamento
+        // Senão mostra somente o nome
         val db = DatabaseManager(this, "saudacoes")
         val cursor = db.listaSaudacao()
         var nome = ""

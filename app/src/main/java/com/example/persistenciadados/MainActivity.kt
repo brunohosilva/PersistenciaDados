@@ -13,8 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Instancia a classe DatabaseManager
         val db = DatabaseManager(this, "saudacoes")
 
+        // Chama o metodo de click do botão
+        // Chama o metodo de remover dados do sqlite
+        // Insere dados de acordo com os dados do input
+        // Notifica sucesso ao usuário atraves de um Toast
         btn_save.setOnClickListener(View.OnClickListener{
             db.removeSaudacao()
             db.insereSaudacao(1,input_name.text.toString(), input_spinner.selectedItem.toString())
